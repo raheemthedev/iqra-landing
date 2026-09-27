@@ -122,3 +122,7 @@ body { background: radial-gradient(900px 500px at 85% -5%, #e3f5ea 0%, transpare
   .scene-bar { padding: 14px 18px 0; }
   .scene-companion .bubble { margin-bottom: 56px; }
 }
+
+/* Headings use the sprite's system sans; body stays Nunito */
+h1, h2, h3, .h2, .brand, .answer-text, .mini-head strong, .plan-text strong { font-family: var(--font-head); }
+h3 { font-weight: 700; }
