@@ -1,14 +1,14 @@
 /* Friendlier, chunkier layer on top of landing.css */
-h1, .h2, .demo-copy h3, .answer-text { font-weight: 800; letter-spacing: -0.02em; }
-.hero h1 { font-weight: 900; letter-spacing: -0.03em; line-height: 1.04; }
+h1, .h2, .demo-copy h3, .answer-text { font-weight: 750; letter-spacing: -0.02em; }
+.hero h1 { font-weight: 750; letter-spacing: -0.025em; line-height: 1.04; }
 .hero h1 em { font-style: normal; color: var(--green); }
 .h2 { line-height: 1.08; }
-.eyebrow { font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; }
-strong, h3 { font-weight: 800; }
+.eyebrow { font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; }
+strong, h3 { font-weight: 700; }
 .body-lg, .lead { font-weight: 500; }
 
 /* pressable buttons */
-.btn { font-weight: 800; letter-spacing: 0.01em; border-width: 2px; transition: transform 0.12s, box-shadow 0.12s, background-color 0.2s; }
+.btn { font-weight: 700; letter-spacing: 0.01em; border-width: 2px; transition: transform 0.12s, box-shadow 0.12s, background-color 0.2s; }
 .btn-primary { background: var(--green); box-shadow: 0 4px 0 var(--green-deep); }
 .btn-primary:hover { background: #17905a; }
 .btn-ghost { border-color: #d5dbdd; background: #fff; box-shadow: 0 4px 0 #d5dbdd; }
@@ -28,7 +28,7 @@ strong, h3 { font-weight: 800; }
   background: #dfe4e6; color: #7b8488; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
 .done .hex, .plan-row.done .hex { background: var(--green); color: #fff; }
-.pill { flex: none; font-size: 13px; font-weight: 800; padding: 6px 12px; border-radius: 999px; background: #eef1f2; color: var(--muted); min-width: 58px; text-align: center; }
+.pill { flex: none; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: #eef1f2; color: var(--muted); min-width: 58px; text-align: center; }
 .pill.on { background: var(--green-soft); color: var(--green-deep); }
 
 /* hero scene: light, like the sprite's home */
@@ -50,11 +50,11 @@ strong, h3 { font-weight: 800; }
 .col { border-width: 2px; box-shadow: 0 5px 0 var(--border); }
 .routine-list li { border-width: 2px; box-shadow: 0 4px 0 var(--border); }
 .round-btn.tone { width: 52px; height: 52px; background: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-deep); border-color: transparent; }
-.step-n { width: 48px; height: 48px; font-weight: 900; font-size: 20px; box-shadow: 0 4px 0 var(--green-deep); }
+.step-n { width: 48px; height: 48px; font-weight: 750; font-size: 20px; box-shadow: 0 4px 0 var(--green-deep); }
 .steps li:not(:last-child)::before { top: 24px; }
-.faq-item button { font-weight: 800; }
+.faq-item button { font-weight: 700; }
 .callout { border-radius: var(--r-md); border: 2px solid #f1dda0; }
-.ayah-n { font-weight: 800; }
+.ayah-n { font-weight: 700; }
 
 /* saturated companion band */
 .band { background: var(--green); color: #fff; }
