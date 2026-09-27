@@ -4,9 +4,9 @@ import { Icon } from './Icons'
 
 export function TodayPreview() {
   const items = [
-    { id: 'lesson', title: 'Continue your lesson', sub: 'Lesson 12 · example' },
-    { id: 'read', title: 'Read a few āyāt', sub: 'Al-Fātiḥah 1:1–7' },
-    { id: 'review', title: 'Review Arabic', sub: 'Ten short checks' },
+    { id: 'lesson', title: 'Continue your lesson', sub: 'Lesson 12 · example', icon: 'learn' as const },
+    { id: 'read', title: 'Read a few āyāt', sub: 'Al-Fātiḥah 1:1–7', icon: 'quran' as const },
+    { id: 'review', title: 'Review Arabic', sub: 'Ten short checks', icon: 'practice' as const },
   ]
   const [done, setDone] = useState<string[]>(['lesson'])
   const toggle = (id: string) => setDone((d) => (d.includes(id) ? d.filter((x) => x !== id) : [...d, id]))

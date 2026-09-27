@@ -60,7 +60,7 @@ export function Hero() {
           </div>
           <div className="scene-companion">
             <div className="bubble">Ready for a quick check?</div>
-            <Companion size={112} />
+            <Companion size={120} />
           </div>
         </div>
       </figure>
