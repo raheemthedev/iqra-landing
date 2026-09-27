@@ -6,9 +6,9 @@ export const nav = [
 ]
 
 export const hero = {
-  eyebrow: 'A companion for your daily study',
+  eyebrow: 'A companion that lives on your Mac desktop',
   title: ['Make a little room for learning.', 'Every day.'],
-  body: 'Bring Arabic practice, Qur’an reading, and your next lesson into a calmer routine—with a small companion beside you on your desktop.',
+  body: 'A small sprite sits right on your desktop and brings Arabic practice, Qur’an reading, and your next lesson into a calmer daily routine—no separate app to remember to open.',
   support: 'Local progress. No account required.',
   strip: ['Desktop companion', 'Short Arabic checks', 'Qur’an page reading', 'Local progress'],
 }
