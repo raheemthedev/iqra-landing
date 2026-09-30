@@ -1,5 +1,5 @@
 import type { Cta } from '../content/config'
-import { Icon } from './Icons'
+import { AppleIcon, Icon } from './Icons'
 
 export function CtaLink({ cta, size = 'md', variant = 'primary', className = '', icon = true }: { cta: Cta; size?: 'sm' | 'md' | 'lg'; variant?: 'primary' | 'light'; className?: string; icon?: boolean }) {
   const isDownload = cta.label.startsWith('Download')
@@ -10,7 +10,7 @@ export function CtaLink({ cta, size = 'md', variant = 'primary', className = '',
       {...(cta.live ? { download: '' } : {})}
       {...(cta.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      {icon && isDownload && <Icon name="laptop" size={20} />}
+      {icon && isDownload && <AppleIcon size={20} />}
       {cta.label}
       {!icon || !isDownload ? <Icon name={cta.external ? 'external' : 'arrow'} size={18} /> : <Icon name="download" size={18} />}
     </a>
