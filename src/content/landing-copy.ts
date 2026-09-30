@@ -14,15 +14,15 @@ export const hero = {
 }
 
 export const features = {
-  title: 'Everything you study, one small companion away',
-  intro: 'Not another tab to remember. Iqra stays on your desktop and puts the next useful step within reach.',
+  title: 'One small companion. Everything you study.',
+  intro: 'Not another tab to remember. Iqra stays on your desktop and keeps the next useful step within reach.',
   tiles: [
-    { id: 'companion', icon: 'sparkle', title: 'A companion on your desktop', body: 'A movable sprite that stays above your windows and reacts as you answer.' },
-    { id: 'checks', icon: 'practice', title: 'Short Arabic checks', body: 'Reveal-first checks on your schedule, or none at all.' },
-    { id: 'today', icon: 'today', title: 'A daily plan', body: 'One clear next step across your lesson, reading and practice.' },
-    { id: 'quran', icon: 'quran', title: 'The Qur’an, by page', body: 'All 6,236 āyāt with translation, bookmarks and word-by-word audio.' },
-    { id: 'classes', icon: 'learn', title: 'Classes and your own materials', body: 'Lesson tracking, private notes, and your own PDFs, videos and links.' },
-    { id: 'hadith', icon: 'hadith', title: 'Hadith and duʿāʾ', body: 'Selected, source-linked readings and a small set of Qur’anic duʿāʾ.' },
+    { id: 'companion', icon: 'sparkle', title: 'A companion on your desktop', body: 'A movable sprite that stays above your windows, follows your pointer with its eyes, and reacts as you answer.', tags: ['Above your windows', 'Drag anywhere'] },
+    { id: 'checks', icon: 'practice', title: 'Short Arabic checks', body: 'Reveal the answer, rate how it felt, and words return when they’re due. Only when you want them.', tags: ['Your schedule', 'Fast mode', 'Off switch'] },
+    { id: 'today', icon: 'today', title: 'A daily plan', body: 'One clear next step across your lesson, your reading and your practice.', tags: ['Lesson', 'Read', 'Practice'] },
+    { id: 'quran', icon: 'quran', title: 'The Qur’an, by page', body: 'Read every āyah by mushaf page, with translation, bookmarks and word-by-word audio. Start recitation from any āyah.', tags: ['6,236 āyāt', '114 sūrahs', '604 pages'] },
+    { id: 'classes', icon: 'learn', title: 'Classes and your own materials', body: 'Track your Nurul Bayan lessons, keep private notes, and bring your own PDFs, videos, audio and links.', tags: ['Lesson notes', 'Your files'] },
+    { id: 'hadith', icon: 'hadith', title: 'Hadith and duʿāʾ', body: 'Selected, source-linked Hadith readings across six collections, and a small set of Qur’anic duʿāʾ.', tags: ['Source-linked', 'Six collections'] },
   ],
 }
 

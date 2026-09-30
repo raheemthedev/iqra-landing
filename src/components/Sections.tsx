@@ -147,22 +147,30 @@ export function FAQ() {
 }
 
 export function Features() {
+  const cta = primaryCta()
   return (
     <section id="features" className="section container features" aria-labelledby="features-title">
       <div className="features-head">
         <p className="hx-pill">What Iqra does</p>
         <h2 id="features-title" className="h2">{features.title}</h2>
         <p className="body-lg">{features.intro}</p>
+        <CtaLink cta={cta} />
       </div>
-      <ul className="bento">
-        {features.tiles.map((t) => (
-          <li key={t.id} className="bento-tile">
-            <span className="round-btn tone"><Icon name={t.icon as IconName} /></span>
-            <h3>{t.title}</h3>
-            <p>{t.body}</p>
+      <ol className="flist">
+        {features.tiles.map((t, i) => (
+          <li key={t.id} className="frow">
+            <span className="frow-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span className="round-btn frow-icon"><Icon name={t.icon as IconName} size={22} /></span>
+            <div className="frow-main">
+              <h3>{t.title}</h3>
+              <p>{t.body}</p>
+              <ul className="frow-tags">
+                {t.tags.map((g) => <li key={g}>{g}</li>)}
+              </ul>
+            </div>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   )
 }

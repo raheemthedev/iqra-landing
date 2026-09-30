@@ -58,15 +58,23 @@
 .mac-dock-iqra i { position: absolute; left: 50%; top: 50%; width: 7px; height: 20px; margin: -10px 0 0 -3.5px; background: #fff; border-radius: 4px; }
 .mac-dock-iqra::after { content: ''; position: absolute; right: 7px; bottom: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron); }
 
-/* ---------- Feature grid ---------- */
-.features-head { display: grid; justify-items: center; text-align: center; gap: var(--s-3); max-width: 720px; margin-inline: auto; }
+/* ---------- Feature list ---------- */
+.features { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.features-head { position: sticky; top: calc(var(--header-h) + 32px); display: grid; justify-items: start; gap: var(--s-3); }
 .features-head .h2 { text-wrap: balance; }
-.features-head .body-lg { max-width: 52ch; }
-.bento { margin-top: var(--s-6); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
-.bento-tile { display: grid; gap: 8px; align-content: start; padding: var(--s-5); background: #fff; border: 2px solid var(--border); border-radius: var(--r-lg); box-shadow: 0 4px 0 var(--border); }
-.bento-tile .round-btn.tone { width: 48px; height: 48px; margin-bottom: 6px; }
-.bento-tile h3 { font-family: var(--font-head); font-size: 20px; font-weight: 750; letter-spacing: -0.015em; line-height: 1.25; }
-.bento-tile p { color: var(--muted); font-weight: 500; }
+.features-head .btn { margin-top: var(--s-2); }
+.flist { display: grid; border-top: 2px solid var(--border); counter-reset: none; }
+.frow { position: relative; display: grid; grid-template-columns: 34px 56px minmax(0, 1fr); gap: var(--s-3); align-items: start; padding: var(--s-5) var(--s-3); border-bottom: 2px solid var(--border); border-radius: 0; transition: background-color 0.2s ease, padding-left 0.2s ease; }
+.frow:hover { background: var(--green-soft); padding-left: var(--s-4); }
+.frow-n { font-family: var(--font-head); font-weight: 800; font-size: 13px; letter-spacing: 0.06em; color: #98a1a5; padding-top: 18px; }
+.frow-icon { width: 56px; height: 56px; border-width: 2px; color: var(--green); transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+.frow:hover .frow-icon { background: var(--green); border-color: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-deep); }
+.frow:hover .frow-n { color: var(--green); }
+.frow-main h3 { font-family: var(--font-head); font-size: clamp(20px, 2vw, 25px); font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; }
+.frow-main p { margin-top: 6px; color: var(--muted); font-weight: 500; max-width: 56ch; }
+.frow-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.frow-tags li { padding: 4px 12px; border-radius: 999px; background: var(--soft); border: 1.5px solid var(--border); font-size: 13px; font-weight: 700; color: var(--ink); transition: background-color 0.2s; }
+.frow:hover .frow-tags li { background: #fff; }
 
 /* ---------- Mac section ---------- */
 .band-soft { background: var(--soft); color: var(--ink); }
@@ -97,7 +105,8 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .features { grid-template-columns: 1fr; }
+  .features-head { position: static; }
   .mac-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dl { grid-template-columns: 1fr; }
 }
@@ -114,8 +123,10 @@
   .mac-dock { padding: 6px 9px; gap: 8px; }
 }
 @media (max-width: 640px) {
-  .bento, .mac-grid { grid-template-columns: 1fr; }
-  .bento-tile { padding: var(--s-4); }
+  .mac-grid { grid-template-columns: 1fr; }
+  .frow { grid-template-columns: 48px minmax(0, 1fr); padding: var(--s-4) var(--s-2); }
+  .frow-n { display: none; }
+  .frow-icon { width: 48px; height: 48px; }
 }
 @media (max-width: 560px) {
   .hx-actions .btn { flex: 1 1 100%; }
