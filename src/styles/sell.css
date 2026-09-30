@@ -59,17 +59,87 @@
 .mac-dock-iqra::after { content: ''; position: absolute; right: 7px; bottom: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron); }
 
 /* ---------- Feature grid ---------- */
-.intro { max-width: 58ch; margin-top: var(--s-3); }
-.bento { margin-top: var(--s-6); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
-.bento-tile { background: #fff; border: 2px solid var(--border); border-radius: var(--r-lg); padding: var(--s-5); box-shadow: 0 5px 0 var(--border); display: grid; align-content: start; gap: 10px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
-.bento-tile:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--border); }
-.bento-tile.is-wide { grid-column: span 2; }
-.bento-tile h3 { font-family: var(--font-head); font-size: 21px; font-weight: 750; letter-spacing: -0.015em; margin-top: 6px; }
-.bento-tile p { color: var(--muted); font-weight: 500; }
-.tile-companion { background: linear-gradient(150deg, var(--green-soft), #fff 70%); }
-.tile-companion .round-btn.tone { background: var(--saffron); color: #3a2a00; box-shadow: 0 3px 0 #c99524; }
-.tile-quran { background: linear-gradient(150deg, var(--saffron-soft), #fff 70%); }
-.bento-tile .round-btn.tone { width: 52px; height: 52px; }
+.features-head { display: grid; justify-items: center; text-align: center; gap: var(--s-3); max-width: 760px; margin-inline: auto; }
+.features-head .h2 { text-wrap: balance; }
+.features-head .body-lg { max-width: 56ch; }
+.bento { margin-top: var(--s-7); display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--s-3); }
+.bento-tile { grid-column: span 2; display: flex; flex-direction: column; background: #fff; border: 2px solid var(--border); border-radius: 32px; overflow: hidden; box-shadow: 0 6px 0 var(--border); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.bento-tile:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--border); }
+.bento-tile.is-wide { grid-column: span 4; }
+.bento-visual { position: relative; min-height: 236px; padding: var(--s-4); display: grid; place-items: center; background: var(--soft); border-bottom: 2px solid var(--border); overflow: hidden; }
+.bento-text { position: relative; padding: var(--s-4) var(--s-5) var(--s-5); display: grid; gap: 6px; align-content: start; }
+.bento-num { font-family: var(--font-head); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; color: var(--green); }
+.bento-text h3 { font-family: var(--font-head); font-size: 22px; font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; }
+.bento-text p { color: var(--muted); font-weight: 500; }
+.tile-companion .bento-visual { background: radial-gradient(70% 90% at 80% 100%, #f8e2b6 0%, transparent 60%), linear-gradient(150deg, #d5efe2, #eef6f0); }
+.tile-checks .bento-visual { background: linear-gradient(160deg, #fbeecb, #fdf7e6); }
+.tile-today .bento-visual { background: linear-gradient(160deg, #d9efe3, #eef6f1); }
+.tile-quran .bento-visual { background: linear-gradient(160deg, #f6ebd0, #fbf6e8); }
+.tile-classes .bento-visual { background: linear-gradient(160deg, #dbe6f6, #eef2fa); }
+.tile-hadith .bento-visual { background: linear-gradient(160deg, #e8e0f3, #f4f0fa); }
+.tile-local .bento-visual { background: linear-gradient(160deg, #d9efe3, #f1f7f3); }
+
+/* wide tiles: text beside the visual on large screens */
+@media (min-width: 1025px) {
+  .bento-tile.is-wide { flex-direction: row-reverse; }
+  .bento-tile.is-wide .bento-visual { flex: 1.5; border-bottom: 0; border-left: 2px solid var(--border); min-height: 300px; }
+  .bento-tile.is-wide .bento-text { flex: 1; align-content: center; padding: var(--s-5); }
+  .bento-tile.is-wide h3 { font-size: 28px; }
+  .tile-quran.is-wide { flex-direction: row; }
+  .tile-quran.is-wide .bento-visual { border-left: 0; border-right: 2px solid var(--border); }
+}
+
+/* mini illustrations */
+.fv { width: 100%; display: grid; place-items: center; }
+.fv-card { width: 100%; max-width: 330px; background: #fff; border: 1.5px solid rgb(32 36 38 / 0.08); border-radius: 20px; padding: 16px; box-shadow: 0 22px 40px -22px rgb(13 95 58 / 0.4), 0 3px 0 rgb(32 36 38 / 0.05); display: grid; gap: 10px; text-align: left; }
+.fv-card-top { flex-wrap: wrap; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+.fv-card-top strong { font-family: var(--font-head); font-size: 17px; color: var(--ink); }
+.fv-count { font-weight: 800; color: var(--green); font-size: 14px; }
+.fv-btns { display: flex; gap: 8px; }
+.fv-btn { flex: 1; text-align: center; padding: 8px 10px; border-radius: 12px; background: var(--soft); font-weight: 800; font-size: 13px; box-shadow: 0 3px 0 var(--border); }
+.fv-btn.primary { background: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-deep); }
+.fv .chip { min-height: 30px; padding: 0 12px; font-size: 13px; box-shadow: 0 2px 0 var(--border); }
+.fv .chip.is-on { box-shadow: 0 2px 0 var(--green); }
+.fv .chip.static { box-shadow: none; }
+
+.fv-companion { min-height: 250px; }
+.fv-sprite { position: relative; display: grid; justify-items: center; gap: 8px; padding-top: 40px; }
+.fv-bubble { position: absolute; top: 0; left: 50%; transform: translateX(-30%); white-space: nowrap; background: #fff; border: 1.5px solid #cfe6da; border-radius: 16px; padding: 8px 14px; font-size: 14px; font-weight: 800; color: var(--green-deep); box-shadow: 0 3px 0 #cfe6da, 0 12px 26px -12px rgb(36 48 44 / 0.3); }
+.fv-bubble::after { content: ''; position: absolute; left: 30%; bottom: -7px; width: 10px; height: 10px; background: #fff; border: 1.5px solid #cfe6da; border-top: 0; border-left: 0; transform: rotate(45deg); }
+.fv-timer { display: inline-flex; align-items: center; gap: 5px; padding: 3px 11px 3px 8px; border-radius: 999px; background: #fff; border: 1.5px solid #cfe6da; box-shadow: 0 2px 0 #cfe6da; color: var(--green); font-weight: 800; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.fv-float { position: absolute; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgb(255 255 255 / 0.85); border: 1.5px solid rgb(32 36 38 / 0.08); font-size: 12.5px; font-weight: 800; color: var(--ink); box-shadow: 0 8px 18px -10px rgb(32 36 38 / 0.3); }
+.fv-float svg { color: var(--green); }
+.fv-float.f1 { left: 5%; top: 10%; }
+.fv-float.f2 { left: 4%; bottom: 20%; }
+.fv-float.f3 { right: 4%; top: 58%; }
+
+.fv-letter { text-align: center; font-size: 76px; line-height: 1.25; color: var(--ink); margin: -4px 0; }
+.fv-say { text-align: center; color: var(--muted); font-size: 13px; font-weight: 600; margin-top: -8px; }
+.fv-today ul { display: grid; gap: 9px; font-weight: 700; font-size: 14.5px; }
+.fv-today li { display: flex; align-items: center; gap: 10px; }
+
+.fv-ayah { display: flex; gap: 12px; align-items: flex-start; }
+.fv-ayah > div { flex: 1; min-width: 0; display: grid; gap: 6px; }
+.fv-ayah .ar { font-size: 27px; line-height: 1.8; text-align: right; }
+.fv-tr { font-size: 12.5px; color: var(--muted); font-weight: 500; line-height: 1.45; }
+.fv-play { justify-self: start; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; background: var(--green-soft); color: var(--green-deep); font-size: 12.5px; font-weight: 800; }
+.fv-chips { display: flex; gap: 6px; }
+.fv-quran .fv-card { max-width: 400px; }
+.fv-quran .bento-visual { padding-inline: var(--s-3); }
+
+.fv-lesson { display: flex; align-items: center; gap: 12px; }
+.fv-lesson > div { flex: 1; display: grid; line-height: 1.25; }
+.fv-lesson small { color: var(--muted); font-weight: 700; }
+.fv-lesson .round-btn { width: 40px; height: 40px; }
+.fv-note { padding: 10px 12px; border: 1.5px dashed #cfd5d7; border-radius: 12px; color: #98a1a5; font-size: 13px; font-weight: 600; }
+.fv-res { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.fv-coll { display: flex; flex-wrap: wrap; gap: 6px; }
+.fv-hadith .chip svg { color: var(--green); }
+
+.fv-local { gap: 18px; }
+.fv-lock { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: #fff; box-shadow: 0 5px 0 var(--green-deep), 0 20px 30px -16px rgb(13 95 58 / 0.6); }
+.fv-chips-col { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
 /* ---------- Mac section ---------- */
 .band-soft { background: var(--soft); color: var(--ink); }
@@ -100,8 +170,10 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .bento, .mac-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .bento-tile.is-wide { grid-column: span 2; }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mac-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento-tile, .bento-tile.is-wide { grid-column: span 1; }
+  .tile-companion, .tile-quran { grid-column: span 2; }
   .dl { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
@@ -116,9 +188,12 @@
   .mac-dock span { width: 32px; height: 32px; }
   .mac-dock { padding: 6px 9px; gap: 8px; }
 }
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .bento, .mac-grid { grid-template-columns: 1fr; }
-  .bento-tile.is-wide { grid-column: auto; }
-  .bento-tile { padding: var(--s-4); }
+  .bento-tile, .bento-tile.is-wide, .tile-companion, .tile-quran { grid-column: auto; }
+  .bento-text { padding: var(--s-4); }
+  .fv-float.f3 { display: none; }
+}
+@media (max-width: 560px) {
   .hx-actions .btn { flex: 1 1 100%; }
 }

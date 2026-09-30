@@ -8,7 +8,7 @@ function Svg({ children, size = 20 }: { children: ReactNode; size?: number }) {
   )
 }
 
-export type IconName = 'today' | 'practice' | 'learn' | 'quran' | 'hadith' | 'check' | 'arrow' | 'external' | 'menu' | 'close' | 'plus' | 'file' | 'link' | 'video' | 'audio' | 'download' | 'laptop' | 'bell' | 'lock' | 'power' | 'chart' | 'moon' | 'pin' | 'move' | 'sparkle' | 'cursor'
+export type IconName = 'today' | 'practice' | 'learn' | 'quran' | 'hadith' | 'check' | 'arrow' | 'external' | 'menu' | 'close' | 'plus' | 'file' | 'link' | 'video' | 'audio' | 'download' | 'laptop' | 'bell' | 'lock' | 'power' | 'chart' | 'moon' | 'pin' | 'move' | 'sparkle' | 'cursor' | 'clock' | 'play'
 
 export function Icon({ name, size }: { name: IconName; size?: number }) {
   const paths: Record<IconName, ReactNode> = {
@@ -38,6 +38,8 @@ export function Icon({ name, size }: { name: IconName; size?: number }) {
     move: <path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20" />,
     sparkle: <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z" />,
     cursor: <path d="M4 3l7 17 2.5-7.5L21 10z" />,
+    clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+    play: <path d="m8 5 11 7-11 7z" />,
   }
   return <Svg size={size}>{paths[name]}</Svg>
 }

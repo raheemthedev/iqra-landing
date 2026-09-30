@@ -3,6 +3,7 @@ import { companion, download, faq, features, mac, routine, sources, steps, why }
 import { primaryCta, release } from '../content/config'
 import { Companion } from './Companion'
 import { CtaLink } from './CtaLink'
+import { ChecksVisual, ClassesVisual, CompanionVisual, HadithVisual, LocalVisual, QuranVisual, TodayVisual } from './FeatureVisuals'
 import { BrandMark, Icon, type IconName } from './Icons'
 
 export function Why() {
@@ -146,20 +147,38 @@ export function FAQ() {
   )
 }
 
+const visuals: Record<string, () => React.JSX.Element> = {
+  companion: CompanionVisual,
+  checks: ChecksVisual,
+  today: TodayVisual,
+  quran: QuranVisual,
+  classes: ClassesVisual,
+  hadith: HadithVisual,
+  local: LocalVisual,
+}
+
 export function Features() {
   return (
-    <section id="features" className="section container" aria-labelledby="features-title">
-      <p className="eyebrow">What Iqra does</p>
-      <h2 id="features-title" className="h2 narrow">{features.title}</h2>
-      <p className="body-lg intro">{features.intro}</p>
+    <section id="features" className="section container features" aria-labelledby="features-title">
+      <div className="features-head">
+        <p className="hx-pill">What Iqra does</p>
+        <h2 id="features-title" className="h2">{features.title}</h2>
+        <p className="body-lg">{features.intro}</p>
+      </div>
       <ul className="bento">
-        {features.tiles.map((t) => (
-          <li key={t.id} className={`bento-tile tile-${t.id}${t.wide ? ' is-wide' : ''}`}>
-            <span className="round-btn tone"><Icon name={t.icon as IconName} /></span>
-            <h3>{t.title}</h3>
-            <p>{t.body}</p>
-          </li>
-        ))}
+        {features.tiles.map((t, i) => {
+          const Visual = visuals[t.id]
+          return (
+            <li key={t.id} className={`bento-tile tile-${t.id}${t.wide ? ' is-wide' : ''}`}>
+              <div className="bento-visual">{Visual && <Visual />}</div>
+              <div className="bento-text">
+                <span className="bento-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{t.title}</h3>
+                <p>{t.body}</p>
+              </div>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )
