@@ -1,16 +1,54 @@
 export const nav = [
+  { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how' },
   { label: 'Inside Iqra', href: '#inside' },
-  { label: 'Sources & privacy', href: '#sources' },
+  { label: 'Privacy', href: '#sources' },
   { label: 'FAQ', href: '#faq' },
 ]
 
 export const hero = {
-  eyebrow: 'A companion that lives on your Mac desktop',
+  pill: 'A study companion for your Mac desktop',
   title: ['Make a little room for learning.', 'Every day.'],
-  body: 'A small sprite sits right on your desktop and brings Arabic practice, Qur’an reading, and your next lesson into a calmer daily routine—no separate app to remember to open.',
-  support: 'Local progress. No account required.',
-  strip: ['Desktop companion', 'Short Arabic checks', 'Qur’an page reading', 'Local progress'],
+  body: 'Iqra is a small sprite that lives on your Mac desktop. It offers short Arabic checks when you want them, and opens a compact study space for Qur’an reading, your classes, Hadith and duʿāʾ.',
+  facts: ['Sits above your other windows', 'Local progress, no account', 'Your schedule, your rules'],
+}
+
+export const features = {
+  title: 'Everything you study, one small companion away',
+  intro: 'Not another tab to remember. Iqra stays on your desktop and puts the next useful step within reach.',
+  tiles: [
+    { id: 'companion', icon: 'sparkle', wide: true, title: 'A companion that lives on your desktop', body: 'A movable sprite stays above your other windows. Its eyes follow your pointer, and it reacts when you answer a check. Click it to open your study space.' },
+    { id: 'checks', icon: 'practice', title: 'Short Arabic checks', body: 'Reveal-first checks pop up on your schedule: every few minutes, every minute in fast mode, or off.' },
+    { id: 'today', icon: 'today', title: 'A daily plan', body: 'One clear next step across your lesson, Qur’an reading and practice.' },
+    { id: 'quran', icon: 'quran', wide: true, title: 'The Qur’an, by page', body: 'All 6,236 āyāt across 114 sūrahs in the standard 604-page layout, with translation, transliteration, bookmarks and word-by-word audio. Start recitation from any āyah.' },
+    { id: 'classes', icon: 'learn', title: 'Classes and your own materials', body: 'Track Nurul Bayan lessons, keep private notes, and add your own PDFs, videos, audio and links.' },
+    { id: 'hadith', icon: 'hadith', title: 'Hadith and duʿāʾ', body: 'Selected, source-linked Hadith readings and a small selection of Qur’anic duʿāʾ.' },
+    { id: 'local', icon: 'lock', title: 'Progress stays yours', body: 'Saved on your device. Export a backup any time.' },
+  ],
+}
+
+export const mac = {
+  title: 'Built for the Mac desktop',
+  intro: 'Iqra is a real desktop app, not a website in a tab. It behaves like something that lives on your Mac.',
+  items: [
+    { icon: 'pin', title: 'Stays above your other apps', body: 'Keep the sprite in view while you work, or tuck it away.' },
+    { icon: 'move', title: 'Drag it anywhere', body: 'Place it where it suits you. Resize the sprite and the lesson text to taste.' },
+    { icon: 'bell', title: 'Reminders and notifications', body: 'Morning, afternoon and evening reminders, with optional macOS notifications.' },
+    { icon: 'power', title: 'Opens when you log in', body: 'Optional. Turn it on and Iqra is there when your day starts.' },
+    { icon: 'chart', title: 'Quiet when you need it', body: 'Change lesson timing, use fast mode, or switch pop-up lessons off.' },
+    { icon: 'lock', title: 'Local first', body: 'Your progress is stored on your Mac. Streamed recitation and online lessons still need internet.' },
+  ],
+}
+
+export const download = {
+  title: 'Get Iqra Companion for Mac',
+  status: 'The macOS app is built and tested. The public download is being finalized.',
+  steps: [
+    { title: 'Download the disk image', body: 'One file, made for Mac.' },
+    { title: 'Drag Iqra to Applications', body: 'The usual Mac install.' },
+    { title: 'Open it and pick a starting point', body: 'Choose your level and goals. That’s the setup.' },
+  ],
+  requirements: 'Requirements and version details are published with each release.',
 }
 
 export const why = {

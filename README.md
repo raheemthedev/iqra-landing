@@ -13,7 +13,11 @@ npm run build   # type-check + production build to dist/
 ```
 
 ## Release configuration
-`src/content/config.ts` controls the CTA. Default `releaseMode: 'none'` → "Explore Iqra" (scrolls to demo). Set `'public'` + `downloadUrl` for "Download for macOS", or `'preview'` + `contactUrl` for "Request access". No placeholder links.
+`src/content/config.ts` controls the "Download for Mac" button everywhere (header, hero, download section).
+
+- **Default (`releaseMode: 'none'`)**: the button scrolls to the download section, which states honestly that the public build is being finalized.
+- **To make it a real download**: host the `.dmg` publicly (for example a GitHub Release), then set `releaseMode: 'public'` and `downloadUrl: '<direct .dmg link>'`. Optionally set `version` and `minimumMacOS`. Nothing else needs to change.
+- The current local build is Apple Silicon (`chip: 'Apple Silicon'`). Change `chip` if you publish another architecture.
 
 ## Content
 Copy: `src/content/landing-copy.ts`. Demo fixtures (Al-Fātiḥah 1:1–7, one Bukhari excerpt, Qur’an 2:201): `src/content/demo-fixtures.ts` — hand-typed for illustration, **verify against Quran Foundation / Saheeh International / Sunnah.com before relying on them.**

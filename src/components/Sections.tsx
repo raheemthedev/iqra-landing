@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { companion, faq, finalCta, routine, sources, steps, why } from '../content/landing-copy'
-import { primaryCta } from '../content/config'
+import { companion, download, faq, features, mac, routine, sources, steps, why } from '../content/landing-copy'
+import { primaryCta, release } from '../content/config'
 import { Companion } from './Companion'
 import { CtaLink } from './CtaLink'
 import { BrandMark, Icon, type IconName } from './Icons'
@@ -146,17 +146,78 @@ export function FAQ() {
   )
 }
 
-export function FinalCta() {
+export function Features() {
+  return (
+    <section id="features" className="section container" aria-labelledby="features-title">
+      <p className="eyebrow">What Iqra does</p>
+      <h2 id="features-title" className="h2 narrow">{features.title}</h2>
+      <p className="body-lg intro">{features.intro}</p>
+      <ul className="bento">
+        {features.tiles.map((t) => (
+          <li key={t.id} className={`bento-tile tile-${t.id}${t.wide ? ' is-wide' : ''}`}>
+            <span className="round-btn tone"><Icon name={t.icon as IconName} /></span>
+            <h3>{t.title}</h3>
+            <p>{t.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+export function MadeForMac() {
+  return (
+    <section id="mac" className="band band-soft" aria-labelledby="mac-title">
+      <div className="container">
+        <p className="eyebrow">On your desktop</p>
+        <h2 id="mac-title" className="h2 narrow">{mac.title}</h2>
+        <p className="body-lg intro">{mac.intro}</p>
+        <ul className="mac-grid">
+          {mac.items.map((it) => (
+            <li key={it.title}>
+              <span className="round-btn"><Icon name={it.icon as IconName} /></span>
+              <div>
+                <strong>{it.title}</strong>
+                <span>{it.body}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+export function DownloadSection() {
   const cta = primaryCta()
   return (
-    <section id="availability" className="container final-wrap" aria-labelledby="final-title">
-      <div className="final">
-        <h2 id="final-title" className="h2 on-dark">{finalCta.title}</h2>
-        <p className="body-lg">{finalCta.body}</p>
-        <div className="final-actions">
-          <CtaLink cta={cta} variant="light" />
-          {cta.note && <p className="final-note">{cta.note}</p>}
+    <section id="download" className="container final-wrap" aria-labelledby="download-title">
+      <div className="final dl">
+        <div className="dl-copy">
+          <p className="dl-pill"><Icon name="laptop" size={16} /> {release.chip ?? 'Mac'}</p>
+          <h2 id="download-title" className="h2 on-dark">{download.title}</h2>
+          <p className="body-lg">{cta.live ? 'Download the disk image and drag Iqra to Applications.' : download.status}</p>
+          <div className="final-actions">
+            {cta.live ? (
+              <CtaLink cta={cta} variant="light" size="lg" />
+            ) : (
+              <span className="dl-status" role="status"><span className="dl-dot" aria-hidden="true" />Public build coming soon</span>
+            )}
+            {cta.live && cta.note && <p className="final-note">{cta.note}</p>}
+          </div>
+          <p className="dl-req">{download.requirements}</p>
         </div>
+        <ol className="dl-steps">
+          {download.steps.map((st, i) => (
+            <li key={st.title}>
+              <span className="dl-n" aria-hidden="true">{i + 1}</span>
+              <div>
+                <strong>{st.title}</strong>
+                <span>{st.body}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   )

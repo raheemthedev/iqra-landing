@@ -5,6 +5,7 @@ import './styles/tokens.css'
 import './styles/global.css'
 import './styles/landing.css'
 import './styles/playful.css'
+import './styles/sell.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
