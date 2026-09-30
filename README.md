@@ -2,6 +2,10 @@
 
 Marketing site for Iqra Companion. React + TypeScript + Vite. Isolated from the desktop app.
 
+Local path: `/Users/watashiwaningen/Desktop/Iqra/iqra-landing`. This remains an independent Git repository, ignored by its parent app repository. Run website commands from this directory, not from the app root.
+
+Deployment: https://iqra-landing-two.vercel.app/
+
 ```bash
 npm install
 npm run dev     # local dev
