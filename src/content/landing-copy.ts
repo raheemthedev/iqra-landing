@@ -17,13 +17,12 @@ export const features = {
   title: 'Everything you study, one small companion away',
   intro: 'Not another tab to remember. Iqra stays on your desktop and puts the next useful step within reach.',
   tiles: [
-    { id: 'companion', icon: 'sparkle', wide: true, title: 'A companion that lives on your desktop', body: 'A movable sprite stays above your other windows. Its eyes follow your pointer, and it reacts when you answer a check. Click it to open your study space.' },
-    { id: 'checks', icon: 'practice', title: 'Short Arabic checks', body: 'Reveal-first checks pop up on your schedule: every few minutes, every minute in fast mode, or off.' },
-    { id: 'today', icon: 'today', title: 'A daily plan', body: 'One clear next step across your lesson, Qur’an reading and practice.' },
-    { id: 'quran', icon: 'quran', wide: true, title: 'The Qur’an, by page', body: 'All 6,236 āyāt across 114 sūrahs in the standard 604-page layout, with translation, transliteration, bookmarks and word-by-word audio. Start recitation from any āyah.' },
-    { id: 'classes', icon: 'learn', title: 'Classes and your own materials', body: 'Track Nurul Bayan lessons, keep private notes, and add your own PDFs, videos, audio and links.' },
-    { id: 'hadith', icon: 'hadith', title: 'Hadith and duʿāʾ', body: 'Selected, source-linked Hadith readings and a small selection of Qur’anic duʿāʾ.' },
-    { id: 'local', icon: 'lock', title: 'Progress stays yours', body: 'Saved on your device. Export a backup any time.' },
+    { id: 'companion', icon: 'sparkle', title: 'A companion on your desktop', body: 'A movable sprite that stays above your windows and reacts as you answer.' },
+    { id: 'checks', icon: 'practice', title: 'Short Arabic checks', body: 'Reveal-first checks on your schedule, or none at all.' },
+    { id: 'today', icon: 'today', title: 'A daily plan', body: 'One clear next step across your lesson, reading and practice.' },
+    { id: 'quran', icon: 'quran', title: 'The Qur’an, by page', body: 'All 6,236 āyāt with translation, bookmarks and word-by-word audio.' },
+    { id: 'classes', icon: 'learn', title: 'Classes and your own materials', body: 'Lesson tracking, private notes, and your own PDFs, videos and links.' },
+    { id: 'hadith', icon: 'hadith', title: 'Hadith and duʿāʾ', body: 'Selected, source-linked readings and a small set of Qur’anic duʿāʾ.' },
   ],
 }
 
