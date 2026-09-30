@@ -6,17 +6,19 @@ import { CtaLink } from './CtaLink'
 import { BrandMark, Icon, type IconName } from './Icons'
 
 export function Why() {
+  const icons: IconName[] = ['pin', 'arrow', 'clock']
   return (
-    <section className="section container why" aria-labelledby="why-title">
+    <section className="section container why2" aria-labelledby="why-title">
       <h2 id="why-title" className="h2">{why.title}</h2>
-      <div>
-        <p className="body-lg">{why.body}</p>
-        <ul className="check-list">
-          {why.points.map((p) => (
-            <li key={p}><span className="tick on"><Icon name="check" size={14} /></span>{p}</li>
-          ))}
-        </ul>
-      </div>
+      <p className="body-lg">{why.body}</p>
+      <ul className="why2-points">
+        {why.points.map((p, i) => (
+          <li key={p}>
+            <span className="round-btn tone"><Icon name={icons[i]} size={20} /></span>
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
@@ -26,10 +28,10 @@ export function Steps() {
     <section id="how" className="section container" aria-labelledby="how-title">
       <p className="eyebrow">How it works</p>
       <h2 id="how-title" className="h2 narrow">Three small moves, repeated.</h2>
-      <ol className="steps">
+      <ol className="steps2">
         {steps.map((s, i) => (
           <li key={s.title}>
-            <span className="step-n" aria-hidden="true">{i + 1}</span>
+            <span className="steps2-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             <h3>{s.title}</h3>
             <p>{s.body}</p>
           </li>
@@ -72,11 +74,11 @@ export function Sources() {
   return (
     <section id="sources" className="section container" aria-labelledby="sources-title">
       <h2 id="sources-title" className="h2 narrow">{sources.title}</h2>
-      <div className="two-col">
-        <div className="col">
+      <div className="src2">
+        <div className="src2-col">
           <h3>{sources.left.title}</h3>
           <p>{sources.left.body}</p>
-          <ul className="source-list">
+          <ul className="src2-list">
             {sources.links.map((l) => (
               <li key={l.href + l.label}>
                 <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}<Icon name="external" size={14} /></a>
@@ -85,12 +87,18 @@ export function Sources() {
             ))}
           </ul>
         </div>
-        <div className="col">
+        <div className="src2-col src2-privacy">
+          <span className="round-btn tone"><Icon name="lock" size={22} /></span>
           <h3>{sources.right.title}</h3>
           <p>{sources.right.body}</p>
-          <p className="callout">{sources.disclaimer}</p>
+          <ul className="src2-checks">
+            <li><Icon name="check" size={16} />Stored on your Mac</li>
+            <li><Icon name="check" size={16} />No account for local progress</li>
+            <li><Icon name="check" size={16} />Export a backup any time</li>
+          </ul>
         </div>
       </div>
+      <p className="src2-note"><Icon name="sparkle" size={16} />{sources.disclaimer}</p>
     </section>
   )
 }
@@ -99,22 +107,18 @@ const routineIcons: IconName[] = ['learn', 'quran', 'practice']
 
 export function Routine() {
   return (
-    <section className="section container routine" aria-labelledby="routine-title">
-      <div>
-        <h2 id="routine-title" className="h2">{routine.title}</h2>
-        <p className="body-lg mt">{routine.body}</p>
-      </div>
-      <ul className="routine-list">
+    <section className="section container routine2" aria-labelledby="routine-title">
+      <h2 id="routine-title" className="h2 narrow">{routine.title}</h2>
+      <p className="body-lg">{routine.body}</p>
+      <ol className="routine2-flow">
         {routine.items.map((r, i) => (
           <li key={r.label}>
-            <span className="round-btn tone"><Icon name={routineIcons[i]} /></span>
-            <div>
-              <strong>{r.label}</strong>
-              <span>{r.text}</span>
-            </div>
+            <span className="round-btn routine2-icon"><Icon name={routineIcons[i]} size={24} /></span>
+            <strong>{r.label}</strong>
+            <span>{r.text}</span>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   )
 }
