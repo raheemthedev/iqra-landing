@@ -17,6 +17,11 @@
 .hx-facts li { padding: 6px 14px; background: #fff; border: 2px solid var(--border); border-radius: 999px; font-size: 14px; font-weight: 700; }
 
 /* ---------- Illustrated Mac desktop ---------- */
+.iqra-owl { display: inline-block; flex: none; background-repeat: no-repeat; vertical-align: middle; }
+.brand img { flex: none; }
+.mac-dock-iqra { background: transparent !important; }
+.mac-dock-iqra img { width: 40px; height: 40px; object-fit: contain; }
+.mac-dock-iqra::after { display: none; }
 .mac { width: 100%; max-width: 1080px; margin: 0; border-radius: 28px; overflow: hidden; position: relative; aspect-ratio: 16 / 9.2; text-align: left;
   background:
     radial-gradient(60% 80% at 15% 20%, #cdeedd 0%, transparent 60%),

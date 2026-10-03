@@ -46,11 +46,7 @@ export function Icon({ name, size }: { name: IconName; size?: number }) {
 
 export function BrandMark({ size = 32 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <rect width="64" height="64" rx="18" fill="#176D59" />
-      <rect x="28" y="16" width="8" height="34" rx="4" fill="#fff" />
-      <circle cx="46" cy="46" r="5" fill="#EDB742" />
-    </svg>
+    <img src="/iqra-owl.png" width={size} height={size} style={{ objectFit: 'contain' }} alt="" aria-hidden="true" />
   )
 }
 

@@ -84,7 +84,7 @@ export function MacDesktop() {
         {dock.map((c) => (
           <span key={c} style={{ background: c }} />
         ))}
-        <span className="mac-dock-iqra"><i /></span>
+        <span className="mac-dock-iqra"><img src="/iqra-owl.png" alt="" /></span>
       </div>
     </figure>
   )

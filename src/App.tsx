@@ -1,7 +1,7 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { ProductDemo } from './components/ProductDemo'
-import { CompanionSection, DownloadSection, FAQ, Features, Footer, MadeForMac, Routine, Sources, Steps, Why } from './components/Sections'
+import { DownloadSection, FAQ, Features, Footer, Sources, Steps } from './components/Sections'
 
 export default function App() {
   return (
@@ -12,13 +12,9 @@ export default function App() {
         <span id="top" />
         <Hero />
         <Features />
-        <Why />
         <Steps />
         <ProductDemo />
-        <MadeForMac />
-        <CompanionSection />
         <Sources />
-        <Routine />
         <FAQ />
         <DownloadSection />
       </main>

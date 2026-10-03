@@ -72,7 +72,7 @@ export const companion = {
     'Move your companion anywhere. Its eyes follow your pointer; it reacts as you learn.',
     'Behind that little face: your lessons, reading, and practice, ready when you are.',
   ],
-  note: 'Provisional illustration. Final character art is still to be confirmed.',
+  note: 'The same custom owl you’ll meet in the desktop app.',
 }
 
 export const sources = {

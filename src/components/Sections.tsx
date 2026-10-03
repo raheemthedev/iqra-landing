@@ -183,14 +183,12 @@ export function FAQ() {
 }
 
 export function Features() {
-  const cta = primaryCta()
   return (
     <section id="features" className="section container features" aria-labelledby="features-title">
       <div className="features-head">
-        <p className="hx-pill">What Iqra does</p>
+        <p className="eyebrow">What Iqra does</p>
         <h2 id="features-title" className="h2">{features.title}</h2>
         <p className="body-lg">{features.intro}</p>
-        <CtaLink cta={cta} />
       </div>
       <ol className="flist">
         {features.tiles.map((t, i) => (
@@ -200,9 +198,6 @@ export function Features() {
             <div className="frow-main">
               <h3>{t.title}</h3>
               <p>{t.body}</p>
-              <ul className="frow-tags">
-                {t.tags.map((g) => <li key={g}>{g}</li>)}
-              </ul>
             </div>
           </li>
         ))}
@@ -240,7 +235,7 @@ export function DownloadSection() {
     <section id="download" className="container final-wrap" aria-labelledby="download-title">
       <div className="final dl">
         <div className="dl-copy">
-          <p className="dl-pill"><AppleIcon size={14} /> {release.chip ?? 'Mac'}</p>
+          <p className="eyebrow"><AppleIcon size={14} /> {release.chip ?? 'Mac'}</p>
           <h2 id="download-title" className="h2 on-dark">{download.title}</h2>
           <p className="body-lg">{cta.live ? 'Download the disk image and drag Iqra to Applications.' : download.status}</p>
           <div className="final-actions">
@@ -284,7 +279,7 @@ export function Footer() {
           <a href="#faq">FAQ</a>
         </nav>
         <p className="fine">
-          A study aid, not a teacher. Linked sources aren’t partners. This website collects no data. Illustrations are provisional.
+          A study aid, not a teacher. Linked sources aren’t partners. This website collects no data.
         </p>
       </div>
     </footer>

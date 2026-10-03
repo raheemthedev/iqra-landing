@@ -22,7 +22,7 @@ export const release: {
 } = {
   releaseMode: 'none',
   chip: 'Apple Silicon',
-  mascotAssetApproved: false,
+  mascotAssetApproved: true,
 }
 
 export interface Cta {
