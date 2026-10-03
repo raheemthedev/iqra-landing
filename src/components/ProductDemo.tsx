@@ -3,11 +3,11 @@ import { Icon, type IconName } from './Icons'
 import { HadithPreview, LearnPreview, PracticePreview, QuranPreview, TodayPreview } from './DemoPanels'
 
 const tabs: { id: string; label: string; icon: IconName; title: string; body: string; Panel: () => React.JSX.Element }[] = [
-  { id: 'today', label: 'Today', icon: 'today', title: 'One meaningful next step at a time.', body: 'Your lesson, Qur’an reading, and practice in one plan. Pick a step and begin.', Panel: TodayPreview },
-  { id: 'practice', label: 'Practice', icon: 'practice', title: 'Practice, reveal, and review.', body: 'Try a short Arabic check, reveal the answer, and rate your recall for future reviews.', Panel: PracticePreview },
+  { id: 'today', label: 'Today', icon: 'today', title: 'One meaningful next step at a time.', body: 'A compact daily plan links class progress, Qur’an reading, and practice, so you can see what’s next without hunting for it.', Panel: TodayPreview },
+  { id: 'practice', label: 'Practice', icon: 'practice', title: 'Practice, reveal, and review.', body: 'Short Arabic checks that show the answer when you ask. Ratings feed spaced review, so words return when they’re due.', Panel: PracticePreview },
   { id: 'learn', label: 'Learn', icon: 'learn', title: 'Return to your course.', body: 'Return to your course, keep private notes, and bring your own study materials.', Panel: LearnPreview },
-  { id: 'quran', label: 'Qur’an', icon: 'quran', title: 'Read by mushaf page.', body: 'Read with translation, bookmark your place, and start recitation from any āyah you choose.', Panel: QuranPreview },
-  { id: 'hadith', label: 'Hadith & Duʿāʾ', icon: 'hadith', title: 'Small selections, with sources.', body: 'Selected Hadith and Qur’anic duʿāʾ for your reading. Full sources stay one click away.', Panel: HadithPreview },
+  { id: 'quran', label: 'Qur’an', icon: 'quran', title: 'Read by mushaf page.', body: 'All 6,236 āyāt across 114 sūrahs, grouped by the standard 604-page pagination. Show or hide transliteration and translation, bookmark your place, and start recitation from an āyah of your choice.', Panel: QuranPreview },
+  { id: 'hadith', label: 'Hadith & Duʿāʾ', icon: 'hadith', title: 'Small selections, with sources.', body: 'Selected, source-linked Hadith readings and a small selection of Qur’anic duʿāʾ. Full sources are one link away.', Panel: HadithPreview },
 ]
 
 export function ProductDemo() {
@@ -55,7 +55,7 @@ export function ProductDemo() {
         <div className="demo-copy" key={`c-${id}`}>
           <h3>{title}</h3>
           <p>{body}</p>
-          <p className="fine">A taste of the desktop app. Explore freely; this demo saves nothing.</p>
+          <p className="fine">A focused taste of each space. The desktop app does much more, and this page doesn’t save anything.</p>
         </div>
         <div className="demo-panel" key={id}>
           <Panel />

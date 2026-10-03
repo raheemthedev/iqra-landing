@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="hx container" aria-labelledby="hero-title">
       <div className="hx-copy">
-        <p className="eyebrow">{hero.pill}</p>
+        <p className="hx-pill">{hero.pill}</p>
         <h1 id="hero-title">
           {hero.title[0]} <em>{hero.title[1]}</em>
         </h1>
@@ -18,6 +18,11 @@ export function Hero() {
           <a className="btn btn-ghost btn-lg" href="#how">See how it works</a>
         </div>
         <p className="hx-meta">{cta.note}</p>
+        <ul className="hx-facts" aria-label="Product attributes">
+          {hero.facts.map((f) => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
       </div>
       <MacDesktop />
     </section>

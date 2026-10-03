@@ -183,12 +183,14 @@ export function FAQ() {
 }
 
 export function Features() {
+  const cta = primaryCta()
   return (
     <section id="features" className="section container features" aria-labelledby="features-title">
       <div className="features-head">
-        <p className="eyebrow">What Iqra does</p>
+        <p className="hx-pill">What Iqra does</p>
         <h2 id="features-title" className="h2">{features.title}</h2>
         <p className="body-lg">{features.intro}</p>
+        <CtaLink cta={cta} />
       </div>
       <ol className="flist">
         {features.tiles.map((t, i) => (
@@ -198,6 +200,9 @@ export function Features() {
             <div className="frow-main">
               <h3>{t.title}</h3>
               <p>{t.body}</p>
+              <ul className="frow-tags">
+                {t.tags.map((g) => <li key={g}>{g}</li>)}
+              </ul>
             </div>
           </li>
         ))}
@@ -235,7 +240,7 @@ export function DownloadSection() {
     <section id="download" className="container final-wrap" aria-labelledby="download-title">
       <div className="final dl">
         <div className="dl-copy">
-          <p className="eyebrow"><AppleIcon size={14} /> {release.chip ?? 'Mac'}</p>
+          <p className="dl-pill"><AppleIcon size={14} /> {release.chip ?? 'Mac'}</p>
           <h2 id="download-title" className="h2 on-dark">{download.title}</h2>
           <p className="body-lg">{cta.live ? 'Download the disk image and drag Iqra to Applications.' : download.status}</p>
           <div className="final-actions">
@@ -270,7 +275,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <a className="brand" href="#top"><BrandMark size={28} /><span>Iqra Companion</span></a>
-          <p className="fine mt">Arabic practice, Qur’an reading, and your next lesson. A little closer, every day.</p>
+          <p className="fine mt">A desktop companion that brings Arabic practice, Qur’an reading, and your next lesson into a daily rhythm.</p>
         </div>
         <nav aria-label="Footer">
           <a href="#how">How it works</a>
@@ -279,7 +284,7 @@ export function Footer() {
           <a href="#faq">FAQ</a>
         </nav>
         <p className="fine">
-          A study aid, not a teacher. Linked sources aren’t partners. This website collects no data.
+          Iqra is a study aid, not a substitute for a qualified teacher. Third-party sources and course playlists are linked, not endorsed partners. The website itself collects no data.
         </p>
       </div>
     </footer>
