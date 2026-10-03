@@ -275,7 +275,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <a className="brand" href="#top"><BrandMark size={28} /><span>Iqra Companion</span></a>
-          <p className="fine mt">A desktop companion that brings Arabic practice, Qur’an reading, and your next lesson into a daily rhythm.</p>
+          <p className="fine mt">Arabic practice, Qur’an reading, and your next lesson. A little closer, every day.</p>
         </div>
         <nav aria-label="Footer">
           <a href="#how">How it works</a>
@@ -284,7 +284,7 @@ export function Footer() {
           <a href="#faq">FAQ</a>
         </nav>
         <p className="fine">
-          Iqra is a study aid, not a substitute for a qualified teacher. Third-party sources and course playlists are linked, not endorsed partners. The website itself collects no data. Illustrations on this page are provisional.
+          A study aid, not a teacher. Linked sources aren’t partners. This website collects no data. Illustrations are provisional.
         </p>
       </div>
     </footer>
